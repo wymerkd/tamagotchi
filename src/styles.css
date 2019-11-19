@@ -1,6 +1,17 @@
 #playCard {
   display: none;
 }
-.end {
+#end {
+  display: none;
+}
+#feedMe {
+  display: none;
+}
+
+#starving {
+  display: none;
+}
+
+#error {
   display: none;
 }

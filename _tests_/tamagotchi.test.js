@@ -19,18 +19,18 @@ describe('Kutchipatchi', () => {
   });
 
   test('should have a food level of 8 after 2001 milliseconds', () => {
-    jest.advanceTimersByTime(2001);
-    expect(kutchipatchi.foodLevel).toEqual(8);
+    jest.advanceTimersByTime(1001);
+    expect(kutchipatchi.foodLevel).toEqual(9);
   });
 
   test('should die if foodLevel gets to -10', function() {
-  kutchipatchi.foodLevel = -10;
-  expect(kutchipatchi.areYouStarving()).toEqual(true);
+  if (kutchipatchi.foodLevel = -10);
+    expect(kutchipatchi.updateStatus()).toEqual();
   });
 
   test('should get very hungry if 10 seconds pass without feeding', function() {
     jest.advanceTimersByTime(10001);
-    expect(kutchipatchi.areYouStarving()).toEqual(true);
+    expect(kutchipatchi.updateStatus()).toEqual();
   });
 
   test('should have a food level of ten if it is fed', function() {

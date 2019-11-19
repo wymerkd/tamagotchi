@@ -19,16 +19,24 @@
       <button type="submit" class="btn btn-danger">Submit</button>
     </form>
     <div id="playCard">
-      <h1>Your pet: <span id="yourPetName"></span></h1>
+      <h1>Your pet: <span class="yourPetName"></span></h1>
       <h2>My belly is %<span id="yourPetHunger"></span>0 full</h2>
+      <h3 id="feedMe">Feed Me!</h3>
+      <h3 id="starving">Im Starving!! Feed me before I pass!!</h3>
       <button type="button" class="btn btn-danger" id="feed">Feed</button>
-      <button type="button" class="btn btn-info" id="restart">Reset</button>
-    </div>
-    <div class="end">
-      <h1>Game Over</h1>
+      <button type="button" class="btn btn-info restart">New Game</button>
     </div>
 
   </div>
+  <div id="end">
+    <h1>You killed <span class="yourPetName"></span>!!</h1>
+    <button type="button" class="btn btn-info restart">Play Again</button>
+  </div>
+  <div id="error">
+    <h1>You need to create a pet!</h1>
+    <button type="button" class="btn btn-info restart">Create New Pet</button>
+  </div>
+
 
 </body>
 </html>
