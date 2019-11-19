@@ -8,6 +8,7 @@ $(document).ready(function(){
   $("#namePage").submit(function(event){
     event.preventDefault();
     player.name = $("input#petName").val();
+
     let food = player.foodLevel;
     try {
       if (player.name === "") {
@@ -29,6 +30,8 @@ $(document).ready(function(){
       player.feed();
       console.log(player);
     });
+
+    player.setPopUp();
 
     $("button.restart").click(function(){
       location.reload();
