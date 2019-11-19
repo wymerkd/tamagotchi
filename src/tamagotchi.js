@@ -7,15 +7,9 @@ export class Tamagotchi {
   setHunger() {
     setInterval(() => {
       this.foodLevel--;
-    }, 1000);
+    }, 5000);
   }
-  areYouStarving() {
-    if (this.foodLevel > 0) {
-      return false;
-    } else {
-      return true;
-    }
-  }
+
   feed() {
     this.foodLevel = 10;
   }

@@ -6,7 +6,7 @@
   <title>Tamagotchi</title>
 </head>
 <body>
-  <div class="container">
+  <div id="hideMe" class="container">
     <div class="jumbotron">
       <h1>Tamagotchi</h1>
       <p>Have Fun!</p>
@@ -18,8 +18,14 @@
       </div>
       <button type="submit" class="btn btn-danger">Submit</button>
     </form>
-    <div class="card" id="playCard">
-      <button type="button" class="btn btn-danger">Feed</button>
+    <div id="playCard">
+      <h1>Your pet: <span id="yourPetName"></span></h1>
+      <h2>My belly is %<span id="yourPetHunger"></span>0 full</h2>
+      <button type="button" class="btn btn-danger" id="feed">Feed</button>
+      <button type="button" class="btn btn-info" id="restart">Reset</button>
+    </div>
+    <div class="end">
+      <h1>Game Over</h1>
     </div>
 
   </div>

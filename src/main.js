@@ -3,18 +3,38 @@ import $ from 'jquery';
 import 'bootstrap';
 import './styles.css';
 
+
+function updateStatus(player){
+  setInterval(() => {
+    $("#yourPetHunger").text(player.foodLevel);
+    if (player.foodLevel === 9) {
+      $("#hideMe").hide();
+    }
+  }, 50);
+}
+
+
 $(document).ready(function(){
+  let player = new Tamagotchi();
   $("#namePage").submit(function(event){
     event.preventDefault();
-    let playerName = $("input#petName").val();
-    let player = new Tamagotchi(playerName);
+    player.name = $("input#petName").val();
+    let food = player.foodLevel;
+    player.setHunger();
     $("#namePage").hide();
     $("#playCard").show();
-    console.log(player);
-    console.log(this.foodLevel);
-  });
-  $("#playCard").click(function(){
-    alert("cool");
-  });
+    $("#yourPetName").text(player.name);
+    $("#yourPetHunger").text(food);
+    updateStatus(player);
 
+
+    $("#feed").click(function(){
+      player.feed();
+      console.log(player);
+    });
+
+    $("button#restart").click(function(){
+      location.reload();
+    });
+  });
 });
