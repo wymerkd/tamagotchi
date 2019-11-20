@@ -29,12 +29,31 @@ $(document).ready(function(){
     $("#feed").click(function(){
       player.feed();
       console.log(player);
-    });
 
-    player.setPopUp();
-
-    $("button.restart").click(function(){
-      location.reload();
     });
+    let request = new XMLHttpRequest();
+    let randomNumber = Math.floor(Math.random() * (200 - 1) + 1);
+    const url = `https://pokeapi.co/api/v2/pokemon/${randomNumber}`;
+
+    request.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        const response = JSON.parse(this.responseText);
+        getElements(response);
+      }
+    }
+
+    request.open("GET", url, true);
+    request.send();
+
+    const getElements = function(response) {
+      $('#showWeedle').attr("src", response.sprites.front_shiny);
+      console.log("here");
+    }
+  });
+
+  player.setPopUp();
+
+  $("button.restart").click(function(){
+    location.reload();
   });
 });
